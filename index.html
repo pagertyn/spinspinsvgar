@@ -18,6 +18,10 @@ body { background-color: #eee; }
 
 }
 
+.showbox2 {
+  margin-top:50px;
+}
+
 .loader {
   position: relative;
   margin: 0px auto;
@@ -31,7 +35,7 @@ body { background-color: #eee; }
 }
 
 
-.circular {
+.circular, .circular-2 {
 
   animation: rotate 1s linear infinite;
   height: 100%;
@@ -74,6 +78,12 @@ body { background-color: #eee; }
   stroke-linecap: round;
 }
 
+.no-fade .path-inner,  .no-fade .path-middle, .no-fade .path-outer {
+  animation: dash-2 2s ease-in-out 0s infinite;
+  stroke: #06Ac38;
+  
+}
+
 
 @keyframes 
 rotate {  100% {
@@ -110,21 +120,20 @@ stroke-dasharray: 1, 200;
 
 
 
-/* @keyframes 
-dash-cc {  0% {
- stroke-dasharray: 89, 200;
- stroke-dashoffset: -124;
+@keyframes 
+dash-2 {  0% {
+  stroke-dasharray: 1, 500;
+ stroke-dashoffset: 0;
 }
  50% {
- stroke-dasharray: 89, 200;
+ stroke-dasharray: 89, 1000;
  stroke-dashoffset: -35;
 }
  100% {
-
- stroke-dasharray: 1,200;
- stroke-dashoffset: 0;
+ stroke-dasharray: 89, 2000;
+ stroke-dashoffset: -124; 
+ }
 }
-} */
 
 @keyframes 
 color {  100%, 0% {
@@ -144,6 +153,15 @@ color {  100%, 0% {
 /* 100% {
   stroke: #06Ac38;
 } */
+}
+
+@keyframes 
+solidColor {  100%, 0% {
+ stroke: #06Ac38;
+}
+20% {
+ stroke: #06Ac38;
+}
 }
 
 </style>
@@ -166,6 +184,25 @@ color {  100%, 0% {
       </svg> 
 
   </div>
+
+
+  <div class="showbox2">
+    <div class="loader">
+      
+      <svg class="circular circular-outer no-fade" viewBox="25 25 50 50">
+      <circle class="path path-outer no-fade" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+      </svg> 
+    
+      <svg class="circular circular-middle no-fade" viewBox="25 25 50 50">
+        <circle class="path path-middle" cx="50" cy="50" r="8" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+      </svg>
+  
+      <svg class="circular circular-inner no-fade" viewBox="25 25 50 50">
+        <circle class="path path-inner" cx="50" cy="50" r="14" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+        </svg> 
+  
+    </div>
+  
 
 
 </body>
